@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <data>
+        <variable
+            name="handler"
+            type="movil.alejandralandinez.petsapp.LoginActivity"/>
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="movil.alejandralandinez.test.LoginActivity">
+
+        <!-- dasdas -->
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="fill_horizontal"
+            android:background="@color/imgBg"
+            android:src="@drawable/bg4"/>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                style="@style/TextAppearance.AppCompat.Title.Inverse"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="@string/title"
+                android:textSize="70sp"
+                android:fontFamily="@font/enchantingceleb"/>
+
+
+
+            <android.support.design.widget.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/user"
+                android:inputType="textEmailAddress"
+                android:layout_marginTop="290dp"
+                android:layout_marginStart="70dp"
+                android:layout_marginEnd="50dp"
+                android:textColorHint="@color/imgBg"/>
+
+            <android.support.design.widget.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/pass"
+                android:inputType="textPassword"
+                android:layout_marginTop="350dp"
+                android:layout_marginStart="70dp"
+                android:layout_marginEnd="50dp"
+                android:textColorHint="@color/imgBg"/>
+
+            <Button
+                android:id="@+id/btnLogin"
+                android:onClick="@{()-> handler.login()}"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="70dp"
+                android:layout_marginTop="450dp"
+                android:background="@android:color/holo_green_dark"
+                android:text="@string/btnLogin"
+                android:textColor="@color/imgBg"/>
+
+            <Button
+                android:id="@+id/btnRegistro"
+                android:onClick="@{()-> handler.signin()}"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="210dp"
+                style="@android:style/Widget.DeviceDefault.Button.Borderless.Small"
+                android:layout_marginTop="450dp"
+                android:textColor="@color/imgBg"
+
+                android:text="@string/btnRegister" />
+        </FrameLayout>
+
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">PrettyPets</string>
+    <string name="title">PrettyPets</string>
+    <string name="open_menu">Secciones</string>
+    <string name="close_menu">Menu cerrado</string>
+    <string name="user">Username</string>
+    <string name="pass">Password</string>
+    <string name="btnLogin">Login</string>
+    <string name="btnRegister">Registrate</string>
+    <string name="t_gender">Género</string>
+    <string name="hintContact">Número de contacto</string>
+    <string name="h_age">Edad</string>
+    <string name="h_pass">Contraseña</string>
+    <string name="h_user">Username</string>
+    <string name="h_name">Nombre y Apellidos</string>
+    <string name="titleRegMascota">Registro de mascota</string>
+    <string name="petName">Nombre</string>
+    <string name="petAge">Edad</string>
+    <string name="petType">Tipo</string>
+    <string name="Doggo">Perro</string>
+    <string name="Catte">Gato</string>
+    <string name="male">Macho</string>
+    <string name="female">Hembra</string>
+    <string name="petSex">Sexo</string>
+    <string name="finishHim">Finalizar</string>
+    <string name="petRace">Raza</string>
+</resources>

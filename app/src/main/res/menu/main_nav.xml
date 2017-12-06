@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/nav_home"
+        android:title="Tu perfil"
+        android:icon="@drawable/ic_person"
+        />
+    <item android:id="@+id/nav_bitacora"
+        android:title="Bitacora"
+        android:icon="@drawable/ic_library"/>
+    <item android:id="@+id/nav_vets"
+        android:title="Veterinarios"
+        android:icon="@drawable/ic_pets"/>
+
+    <item android:title="Opciones">
+        <menu>
+            <item android:id="@+id/logout"
+                android:title="Logout"
+                />
+            <item android:id="@+id/update"
+                android:title="Actualizar datos"/>
+        </menu>
+    </item>
+
+</menu>
