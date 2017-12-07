@@ -1,10 +1,9 @@
 package movil.alejandralandinez.petsapp.util
 
 import movil.alejandralandinez.petsapp.models.Mascota
+import movil.alejandralandinez.petsapp.models.Vacuna
 
-/**
- * Created by alejandralandinez on 12/6/17.
- */
+
 object Data {
     var peliculas: MutableList<Mascota> = mutableListOf(
             Mascota("Wonder", "Abisinio", "3",
@@ -27,6 +26,12 @@ object Data {
                     "http://mediad.publicbroadcasting.net/p/shared/npr/201309/200804403.jpg",
                     "p","f")
 
+    )
+
+    var vacunas: MutableList<Vacuna> = mutableListOf (
+            Vacuna("2/Feb/2017","Triple Viral","Doctor Lopez","Coco"),
+            Vacuna("10/Mar/2017","Rabia","Doctor Garcia","Ágata"),
+            Vacuna("13/Abr/2017","Ojeras","Doctor Lopez","Covenan")
     )
 
 }

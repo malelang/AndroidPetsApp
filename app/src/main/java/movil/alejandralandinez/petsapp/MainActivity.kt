@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity(), DrawerLayout.DrawerListener  {
             R.id.nav_bitacora -> startActivity<BitacoraActivity>()
             R.id.nav_vets -> startActivity<VetsActivity>()
             R.id.logout -> {
-                getSharedPreferences("preferences", Context.MODE_PRIVATE).edit().putBoolean("logged",false).apply()
+                getSharedPreferences("preferencias", Context.MODE_PRIVATE).edit().putBoolean("logged",false).apply()
                 startActivity<LoginActivity>()
                 finish()
             }

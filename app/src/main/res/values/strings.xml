@@ -24,4 +24,14 @@
     <string name="petSex">Sexo</string>
     <string name="finishHim">Finalizar</string>
     <string name="petRace">Raza</string>
+    <string name="bitacora">Bitácora</string>
+    <string name="textBitacora">Tus mascotas deben estar debidamente vacunadas y desparasitadas, para esto, te recomendamos las siguientes fechas, y así tengas en cuenta a tu peludito en sus cuidados ¡Una mascota sana es una mascota feliz!</string>
+    <string name="textnotfound">No encontrado</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="appliedto">Aplicado a</string>
+    <string name="doctor">Doctor</string>
+    <string name="vaccine">Vacuna</string>
+    <string name="vacdate">Fecha</string>
+    <string name="titleCarnet">Carnet de vacunación</string>
 </resources>
