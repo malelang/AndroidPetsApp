@@ -1,6 +1,7 @@
 package movil.alejandralandinez.petsapp.util
 
 import movil.alejandralandinez.petsapp.models.Mascota
+import movil.alejandralandinez.petsapp.models.Parasito
 import movil.alejandralandinez.petsapp.models.Vacuna
 
 
@@ -32,6 +33,12 @@ object Data {
             Vacuna("2/Feb/2017","Triple Viral","Doctor Lopez","Coco"),
             Vacuna("10/Mar/2017","Rabia","Doctor Garcia","Ágata"),
             Vacuna("13/Abr/2017","Ojeras","Doctor Lopez","Covenan")
+    )
+
+    var parasitos: MutableList<Parasito> = mutableListOf(
+            Parasito("10/May/2014",3,"ACME","10/May/2015","Ágata"),
+            Parasito("10/May/2014",3,"ACME","10/May/2015","Spiderman"),
+            Parasito("10/May/2014",3,"ACME","10/May/2015","Coco")
     )
 
 }

@@ -70,8 +70,8 @@ class MainActivity : AppCompatActivity(), DrawerLayout.DrawerListener  {
 
         when(item.itemId){
             R.id.aboutVacunas -> {startActivity<AboutVacunasActivity>()}
-            //R.id.aboutDoggos -> {startActivity<>()}
-            //R.id.aboutCattes -> {startActivity<>()}
+            R.id.aboutCattes -> {startActivity<AboutGatosActivity>()}
+            R.id.aboutDoggos -> {startActivity<AboutDogsActivity>()}
         }
         if(toggle.onOptionsItemSelected(item)){
             return true
