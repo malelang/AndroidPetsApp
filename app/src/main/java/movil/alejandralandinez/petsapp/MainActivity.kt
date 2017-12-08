@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v4.widget.DrawerLayout
 import android.support.v7.app.ActionBarDrawerToggle
+import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import kotlinx.android.synthetic.main.activity_main.*
@@ -29,6 +30,14 @@ class MainActivity : AppCompatActivity(), DrawerLayout.DrawerListener  {
 
     }
 
+    //region OptionsMenu
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.main_menu,menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+    //endregion
+
+    //region Fragment
     fun putFragment(container: Int, fragment: Fragment) {
         supportFragmentManager.beginTransaction()
                 .replace(container, fragment)
@@ -49,15 +58,23 @@ class MainActivity : AppCompatActivity(), DrawerLayout.DrawerListener  {
         }
         return true
     }
+    //endregion
 
+    //region Toggle
     override fun onPostCreate(savedInstanceState: Bundle?) {
         super.onPostCreate(savedInstanceState)
         toggle.syncState()
     }
 
-    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
-        if(toggle.onOptionsItemSelected(item)){
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
+        when(item.itemId){
+            R.id.aboutVacunas -> {startActivity<AboutVacunasActivity>()}
+            //R.id.aboutDoggos -> {startActivity<>()}
+            //R.id.aboutCattes -> {startActivity<>()}
+        }
+        if(toggle.onOptionsItemSelected(item)){
+            return true
         }
         return super.onOptionsItemSelected(item)
     }
@@ -77,4 +94,5 @@ class MainActivity : AppCompatActivity(), DrawerLayout.DrawerListener  {
     override fun onDrawerOpened(drawerView: View) {
         toggle.onDrawerOpened(drawerView)
     }
+    //endregion
 }

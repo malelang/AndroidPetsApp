@@ -24,7 +24,8 @@
         <activity android:name=".RegisterActivity" />
         <activity android:name=".BitacoraActivity" />
         <activity android:name=".VetsActivity" />
-        <activity android:name=".RegMascotaActivity"></activity>
+        <activity android:name=".RegMascotaActivity" />
+        <activity android:name=".AboutVacunasActivity"></activity>
     </application>
 
 </manifest>
