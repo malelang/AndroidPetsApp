@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.view.ViewGroup
 import movil.alejandralandinez.petsapp.R
+import movil.alejandralandinez.petsapp.databinding.TemplateParasitoBinding
 import movil.alejandralandinez.petsapp.databinding.TemplateVacunaBinding
 import movil.alejandralandinez.petsapp.models.Vacuna
 import movil.alejandralandinez.petsapp.util.inflate

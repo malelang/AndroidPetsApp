@@ -36,9 +36,9 @@ object Data {
     )
 
     var parasitos: MutableList<Parasito> = mutableListOf(
-            Parasito("10/May/2014",3,"ACME","10/May/2015","Ágata"),
-            Parasito("10/May/2014",3,"ACME","10/May/2015","Spiderman"),
-            Parasito("10/May/2014",3,"ACME","10/May/2015","Coco")
+            Parasito("10/May/2014","3","ACME","10/May/2015","Ágata"),
+            Parasito("10/May/2014","3","ACME","10/May/2015","Spiderman"),
+            Parasito("10/May/2014","3","ACME","10/May/2015","Coco")
     )
 
 }

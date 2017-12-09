@@ -50,4 +50,8 @@
     <string name="inforabiagatos">Es una vacuna que es común para ambas especies. Es obligatoria por ley desde los dos meses y cada un año. La rabia es una enfermedad mortal, que ataca a animales y humanos, siendo fundamental la vacunación para prevenirla.</string>
     <string name="vacunaleucemia">Vacuna contra la leucemia felina</string>
     <string name="infoleucemia">Sólo deben vacunarse los gatos que no tienen el virus de la leucemia felina, lo que se puede saber fácilmente mediante una prueba. Es importante realizarla lo antes posible, porque este virus puede desencadenar en cáncer y es altamente peligroso. Por otro lado, hay controversia en torno a esta vacuna, por los importantes efectos secundarios que puede provocar. Por eso se recomienda que, los gatos que no tienen peligro de contagiarse (gatos que no salgan nunca a exteriores ni tengan contacto con gatos desconocidos) no se vacunen. En caso de hacerlo, las primeras dos dosis se deben acordar con un veterinario, durante los primeros seis meses de vida y luego pasa a ser una vacuna anual, que se puede aplicar junto con la triple y antirrábica.</string>
+    <string name="desparasitacionesTitle">Desparasitaciones</string>
+    <string name="weight">Peso</string>
+    <string name="product">Producto</string>
+    <string name="receiverpet">Mascota</string>
 </resources>
