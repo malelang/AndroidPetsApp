@@ -54,4 +54,6 @@
     <string name="weight">Peso</string>
     <string name="product">Producto</string>
     <string name="receiverpet">Mascota</string>
+    <string name="details">Detalles...</string>
+    <string name="titleVets">Lista de veterinarios</string>
 </resources>
