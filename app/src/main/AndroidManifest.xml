@@ -27,7 +27,9 @@
         <activity android:name=".RegMascotaActivity" />
         <activity android:name=".AboutVacunasActivity" />
         <activity android:name=".AboutGatosActivity" />
-        <activity android:name=".AboutDogsActivity"></activity>
+        <activity android:name=".AboutDogsActivity" />
+        <activity android:name=".DetailActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 
 </manifest>

@@ -4,14 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+        <import type="android.view.View" />
         <variable
             name="vet"
             type="movil.alejandralandinez.petsapp.models.Veterinario"/>
+
+        <variable
+            name="manejador"
+            type="movil.alejandralandinez.petsapp.adapters.VeterinarioAdapter"/>
     </data>
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:onClick="@{(view)-> manejador.onVetClick((int) view.tag)}">
 
         <android.support.v7.widget.CardView
             android:layout_width="0dp"

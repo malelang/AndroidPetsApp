@@ -10,7 +10,7 @@ import movil.alejandralandinez.petsapp.models.Veterinario
 import movil.alejandralandinez.petsapp.util.inflate
 
 
-class VeterinarioAdapter:RecyclerView.Adapter<VeterinarioViewHolder>(){
+class VeterinarioAdapter(val callback:(pos:Int)->Unit):RecyclerView.Adapter<VeterinarioViewHolder>(){
 
     var dataVets:List<Veterinario> = emptyList()
     set(value) {
@@ -20,6 +20,12 @@ class VeterinarioAdapter:RecyclerView.Adapter<VeterinarioViewHolder>(){
 
     override fun onBindViewHolder(holder: VeterinarioViewHolder, position: Int) {
         holder.binding.vet = dataVets[position]
+        holder.binding.root.tag = position
+        holder.binding.manejador = this
+    }
+
+    fun onVetClick(pos:Int){
+        callback(pos)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VeterinarioViewHolder  = VeterinarioViewHolder(parent.inflate(R.layout.template_veterinario))

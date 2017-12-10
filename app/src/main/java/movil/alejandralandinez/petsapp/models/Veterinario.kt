@@ -7,4 +7,5 @@ data class Veterinario (var _ident:String,
                         var nombre:String,
                         var direccion: String,
                         var contacto:String,
-                        var imagen:String)
+                        var imagen:String,
+                        var descripcion:String)
