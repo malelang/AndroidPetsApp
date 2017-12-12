@@ -18,4 +18,6 @@ class VetsActivity : AppCompatActivity() {
     fun putvetsFragment(container:Int,fragment: Fragment){
         supportFragmentManager.beginTransaction().replace(container,fragment).commit()
     }
+
+
 }

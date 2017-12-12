@@ -13,8 +13,11 @@ import android.support.v7.graphics.Palette
 import com.squareup.picasso.Callback
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_detail.*
+import kotlinx.android.synthetic.main.content_detail.*
 import movil.alejandralandinez.petsapp.databinding.ActivityDetailBinding
+import movil.alejandralandinez.petsapp.models.Veterinario
 import movil.alejandralandinez.petsapp.util.Data
+import movil.alejandralandinez.petsapp.util.text
 
 class DetailActivity : AppCompatActivity(), Callback {
 
@@ -57,5 +60,12 @@ class DetailActivity : AppCompatActivity(), Callback {
 
     override fun onError() {
 
+    }
+
+    fun save(){
+        val direccion = direccion.toString()
+        val descripcion = descripcion.toString()
+        val contacto = call.toString()
+        val vet = Veterinario("", "", direccion, contacto,"",descripcion)
     }
 }
