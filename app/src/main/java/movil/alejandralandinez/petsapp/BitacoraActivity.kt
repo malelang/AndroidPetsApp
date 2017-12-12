@@ -7,15 +7,23 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_bitacora.*
 import movil.alejandralandinez.petsapp.databinding.ActivityBitacoraBinding
+import movil.alejandralandinez.petsapp.databinding.ActivityLoginBinding
 import movil.alejandralandinez.petsapp.fragments.BitacoraFragment
 import movil.alejandralandinez.petsapp.fragments.ParasitoFragment
-import movil.alejandralandinez.petsapp.models.Vacuna
+import org.jetbrains.anko.startActivity
+
 
 class BitacoraActivity : AppCompatActivity() {
 
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
+
+
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_bitacora)
+        val binding : ActivityBitacoraBinding = DataBindingUtil.setContentView(this,R.layout.activity_bitacora)
+        binding.handlerbit = this
+
 
         putVacunasFragment(R.id.containervacunas,BitacoraFragment.instance())
         putParasitosFragment(R.id.containerparasitos,ParasitoFragment.instance())
@@ -27,5 +35,13 @@ class BitacoraActivity : AppCompatActivity() {
 
     fun putParasitosFragment(container: Int,fragment: Fragment){
         supportFragmentManager.beginTransaction().replace(container,fragment).commit()
+    }
+
+    fun newvac(){
+        startActivity<AddVacActivity>()
+    }
+
+    fun newpar(){
+        startActivity<AddParActivity>()
     }
 }

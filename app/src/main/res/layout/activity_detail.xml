@@ -59,7 +59,7 @@
             app:layout_anchorGravity="bottom|right"
             android:layout_margin="30dp"
             app:srcCompat="@drawable/ic_star"
-            android:onClick="@{()->handler.save()}"
+            
             />
 
     </android.support.design.widget.CoordinatorLayout>
