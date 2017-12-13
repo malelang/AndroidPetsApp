@@ -31,15 +31,15 @@ object Data {
     )
 
     var vacunas: MutableList<Vacuna> = mutableListOf (
-            Vacuna("2/Feb/2017","Triple Viral","Doctor Lopez","Coco"),
-            Vacuna("10/Mar/2017","Rabia","Doctor Garcia","Ágata"),
-            Vacuna("13/Abr/2017","Ojeras","Doctor Lopez","Covenan")
+            Vacuna("2/Feb/2017","Triple Viral","Doctor Lopez"),
+            Vacuna("10/Mar/2017","Rabia","Doctor Garcia"),
+            Vacuna("13/Abr/2017","Ojeras","Doctor Lopez")
     )
 
     var parasitos: MutableList<Parasito> = mutableListOf(
-            Parasito("10/May/2014","3","ACME","10/May/2015","Ágata"),
-            Parasito("10/May/2014","3","ACME","10/May/2015","Spiderman"),
-            Parasito("10/May/2014","3","ACME","10/May/2015","Coco")
+            Parasito("10/May/2014","3","ACME","10/May/2015"),
+            Parasito("10/May/2014","3","ACME","10/May/2015"),
+            Parasito("10/May/2014","3","ACME","10/May/2015")
     )
 
     var veterinarios: MutableList<Veterinario> = mutableListOf(

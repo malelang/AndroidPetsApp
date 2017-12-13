@@ -56,4 +56,17 @@
     <string name="receiverpet">Mascota</string>
     <string name="details">Detalles...</string>
     <string name="titleVets">Lista de veterinarios</string>
+    <string name="fechaaddpar">Fecha</string>
+    <string name="titleaddpar">Agregar desparasitaciones</string>
+    <string name="pesoaddpar">Peso</string>
+    <string name="productoaddpar">Producto</string>
+    <string name="proximaaddpar">Próxima aplicacion</string>
+    <string name="addvac">Agregar</string>
+    <string name="addvacuna">Agregar</string>
+    <string name="vetaddvac">Veterinario</string>
+    <string name="sickaddvac">Enfermedad</string>
+    <string name="dateaddvac">Fecha</string>
+    <string name="registertitle">Registro de usuario</string>
+    <string name="radio_woman">Mujer</string>
+    <string name="radio_man">Hombre</string>
 </resources>

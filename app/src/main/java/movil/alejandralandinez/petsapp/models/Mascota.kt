@@ -9,4 +9,6 @@ class Mascota (var _ident:String,
                var edad: String,
                var imagen: String,
                var tipo: String,
-               var sexo:String)
+               var sexo:String){
+    constructor():this("","","","","","","")
+}

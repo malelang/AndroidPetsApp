@@ -23,6 +23,7 @@ class DetailActivity : AppCompatActivity(), Callback {
 
 
     lateinit var binding:ActivityDetailBinding
+    lateinit var veterinario:Veterinario
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,7 +31,7 @@ class DetailActivity : AppCompatActivity(), Callback {
 
         setSupportActionBar(toolbar)
         val pos = intent.extras.getInt("pos",0)
-        val veterinario= Data.veterinarios[pos]
+        veterinario= Data.veterinarios[pos]
         binding.veterinario = veterinario
 
         collapsing.title = veterinario.nombre

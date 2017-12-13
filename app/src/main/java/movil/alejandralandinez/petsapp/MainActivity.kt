@@ -28,6 +28,7 @@ class MainActivity : AppCompatActivity(), DrawerLayout.DrawerListener  {
 
         putFragment(R.id.container, MainFragment.instance())
 
+        val nombre = getSharedPreferences("preferencias",Context.MODE_PRIVATE).getString("nombre","")
     }
 
     //region OptionsMenu
