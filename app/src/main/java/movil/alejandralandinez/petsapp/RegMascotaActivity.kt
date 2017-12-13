@@ -14,7 +14,7 @@ import movil.alejandralandinez.petsapp.databinding.ActivityRegMascotaBinding
 import movil.alejandralandinez.petsapp.models.Mascota
 import movil.alejandralandinez.petsapp.models.Usuario
 
-import movil.alejandralandinez.petsapp.util.sacar
+
 import movil.alejandralandinez.petsapp.util.text
 
 import org.jetbrains.anko.startActivity
@@ -80,7 +80,6 @@ class RegMascotaActivity : AppCompatActivity() {
         val mascota = Mascota("",petnombre,petraza,petedad,"",tipo,petsex)
         val usuario = Usuario("",nombre,username,contrasena,edad,contacto,sexo,imagen,mascota)
 
-        toast("el sexo del usuario es "+ sexo)
         startActivity<MainActivity>()
 
     }
