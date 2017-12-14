@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v4.widget.DrawerLayout
 import android.support.v7.app.ActionBarDrawerToggle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
@@ -19,6 +20,7 @@ class MainActivity : AppCompatActivity(), DrawerLayout.DrawerListener  {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         setContentView(R.layout.activity_main)
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
@@ -28,7 +30,7 @@ class MainActivity : AppCompatActivity(), DrawerLayout.DrawerListener  {
 
         putFragment(R.id.container, MainFragment.instance())
 
-        val nombre = getSharedPreferences("preferencias",Context.MODE_PRIVATE).getString("nombre","")
+
     }
 
     //region OptionsMenu

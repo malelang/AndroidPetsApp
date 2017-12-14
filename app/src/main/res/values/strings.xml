@@ -69,4 +69,5 @@
     <string name="registertitle">Registro de usuario</string>
     <string name="radio_woman">Mujer</string>
     <string name="radio_man">Hombre</string>
+    <string name="edad_en_meses">Edad(en meses)</string>
 </resources>

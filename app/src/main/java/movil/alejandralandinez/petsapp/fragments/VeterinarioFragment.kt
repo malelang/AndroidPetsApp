@@ -12,11 +12,18 @@ import movil.alejandralandinez.petsapp.DetailActivity
 
 import movil.alejandralandinez.petsapp.R
 import movil.alejandralandinez.petsapp.adapters.VeterinarioAdapter
+import movil.alejandralandinez.petsapp.models.Veterinario
+import movil.alejandralandinez.petsapp.net.AppClient
 import movil.alejandralandinez.petsapp.util.Data
 import org.jetbrains.anko.support.v4.startActivity
+import org.jetbrains.anko.support.v4.toast
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 
-class VeterinarioFragment : Fragment() {
+class VeterinarioFragment : Fragment(){
+
 
     val adapter:VeterinarioAdapter = VeterinarioAdapter(this::VetSelected)
 
@@ -29,9 +36,11 @@ class VeterinarioFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
+
         listvets.adapter=adapter
         listvets.layoutManager = LinearLayoutManager(activity)
         adapter.dataVets = Data.veterinarios
+
     }
 
     fun VetSelected(pos:Int){
@@ -41,5 +50,7 @@ class VeterinarioFragment : Fragment() {
     companion object {
         fun instance():VeterinarioFragment = VeterinarioFragment()
     }
+
+
 
 }// Required empty public constructor

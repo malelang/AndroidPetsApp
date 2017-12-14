@@ -11,7 +11,7 @@ import kotlinx.android.synthetic.main.activity_register.*
 import movil.alejandralandinez.petsapp.databinding.ActivityRegisterBinding
 import movil.alejandralandinez.petsapp.models.Mascota
 import movil.alejandralandinez.petsapp.models.Usuario
-import movil.alejandralandinez.petsapp.util.guardar
+
 import movil.alejandralandinez.petsapp.util.text
 import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.toast

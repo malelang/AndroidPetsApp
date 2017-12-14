@@ -7,6 +7,9 @@
         <variable
             name="veterinario"
             type="movil.alejandralandinez.petsapp.models.Veterinario"/>
+        <variable
+            name="manejavet"
+            type="movil.alejandralandinez.petsapp.DetailActivity"/>
 
     </data>
 
@@ -59,7 +62,7 @@
             app:layout_anchorGravity="bottom|right"
             android:layout_margin="30dp"
             app:srcCompat="@drawable/ic_star"
-            
+            android:onClick="@{()->manejavet.saveVet()}"
             />
 
     </android.support.design.widget.CoordinatorLayout>

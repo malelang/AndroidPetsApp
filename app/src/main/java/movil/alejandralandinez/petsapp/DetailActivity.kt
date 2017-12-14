@@ -63,10 +63,8 @@ class DetailActivity : AppCompatActivity(), Callback {
 
     }
 
-   /* fun save(){
-        val direccion = direccion.toString()
-        val descripcion = descripcion.toString()
-        val contacto = call.toString()
-        val vet = Veterinario("", "", direccion, contacto,"",descripcion)
-    }*/
+    fun saveVet(){
+        val vet = veterinario
+
+    }
 }
