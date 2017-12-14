@@ -1,6 +1,8 @@
 package movil.alejandralandinez.petsapp
 
 import android.content.Context
+import android.content.SharedPreferences
+
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v4.app.Fragment
@@ -13,15 +15,19 @@ import android.view.View
 import kotlinx.android.synthetic.main.activity_main.*
 import movil.alejandralandinez.petsapp.fragments.MainFragment
 import org.jetbrains.anko.startActivity
+import org.jetbrains.anko.toast
 
 class MainActivity : AppCompatActivity(), DrawerLayout.DrawerListener  {
 
     val toggle: ActionBarDrawerToggle by lazy { ActionBarDrawerToggle(this,drawer,R.string.open_menu,R.string.close_menu) }
+    val preferences: SharedPreferences by lazy{ getSharedPreferences("preferencias", Context.MODE_PRIVATE) }
+    var nuevouser=""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         setContentView(R.layout.activity_main)
+        nuevouser=preferences.getString("nuevousuario","").toString()
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         drawer.addDrawerListener(this)
@@ -29,7 +35,7 @@ class MainActivity : AppCompatActivity(), DrawerLayout.DrawerListener  {
         nav.setNavigationItemSelectedListener { setContent(it) }
 
         putFragment(R.id.container, MainFragment.instance())
-
+        toast("Sesion del usuario"+nuevouser+"abierta")
 
     }
 

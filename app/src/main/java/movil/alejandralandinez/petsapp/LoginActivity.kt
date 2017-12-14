@@ -59,6 +59,7 @@ class LoginActivity : AppCompatActivity(), Callback<SimpleResponse> {
     override fun onResponse(call: Call<SimpleResponse>?, response: Response<SimpleResponse>?) {
         toast("Usuario encontrado. Iniciando sesión...")
         preferences.edit().putBoolean("logged",true).apply()
+        preferences.edit().putString("nuevousuario",username).apply()
         startActivity<MainActivity>()
     }
 

@@ -16,7 +16,7 @@ import movil.alejandralandinez.petsapp.models.Veterinario
 import movil.alejandralandinez.petsapp.net.AppClient
 import movil.alejandralandinez.petsapp.util.Data
 import org.jetbrains.anko.support.v4.startActivity
-import org.jetbrains.anko.support.v4.toast
+
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -50,6 +50,8 @@ class VeterinarioFragment : Fragment(){
     companion object {
         fun instance():VeterinarioFragment = VeterinarioFragment()
     }
+
+
 
 
 

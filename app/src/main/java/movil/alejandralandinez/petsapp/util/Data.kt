@@ -4,9 +4,16 @@ import movil.alejandralandinez.petsapp.models.Mascota
 import movil.alejandralandinez.petsapp.models.Parasito
 import movil.alejandralandinez.petsapp.models.Vacuna
 import movil.alejandralandinez.petsapp.models.Veterinario
+import movil.alejandralandinez.petsapp.net.AppClient
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import org.jetbrains.anko.support.v4.toast
 
 
-object Data {
+object Data : Callback<List<Veterinario>> {
+
+
     var peliculas: MutableList<Mascota> = mutableListOf(
             Mascota("Wonder", "Abisinio", "3",
                     "http://2.bp.blogspot.com/-Dj3bRpeki5s/Tm_2ngBXDKI/AAAAAAAACFg/XowWT6WuVzo/s1600/gato_asi%25C3%25A1tico_humo_atigrado.jpg",
@@ -42,9 +49,20 @@ object Data {
             Parasito("10/May/2014","3","ACME","10/May/2015")
     )
 
-    var veterinarios: MutableList<Veterinario> = mutableListOf(
-            Veterinario("3317","Pelos y Patas" ,"Cra. 10N #12 A-102","8222222","http://clubpremiumdecolombia.com/wp-content/uploads/2017/09/pelos-y-patas-logo.jpg", "PELOS Y PATAS SPA es el mejor sitio donde atendemos a lo que tu mas quieres como se lo merece. Servicios de Pet Shop, Sala de Belleza Spa, Clinica, VeteChip y Servicios a Domicilio.  VETECHIP es un microchip de identificación (No GPS) con un código único  programado desde fabrica que permite llevar un registro del animal en una base de datos externa, en esta base de datos se pueden almacenar datos de vital importancia para encontrar el dueño de una mascota y así mismo información medica relevante."),
-            Veterinario("3318","Cannis e Cattus","Carrera 9 # 21N - 36","8232856","https://igx.4sqi.net/img/general/600x600/15020349_fZpPl2DZQ2aRnaQ5hfflKM_-Hbb1AWOp2WVCxAA57Cc.jpg", "Canis e Cattus es fundada en la ciudad de Popayán el 1 de julio de 2008, bajo el nombre de Medicina Veterinaria Praga por los Doctores Beatriz Elena Valencia Miller y David Silva Pineda, con el objetivo de suplir las necesidades de una atención integral en medicina veterinaria para las mascotas de la ciudad, fue así como en su primera sede en el centro histórico de la ciudad funcionó la clínica durante los tres primeros años, luego se trasladó a la sede actual en el barrio ciudad jardín, donde funciona desde junio del 2011. Nuestra visión es mantenernos como la empresa prestadora de servicios médicos veterinarios líder en Popayán; consolidando un equipo humano unido y capacitado, utilizando tecnología de vanguardia y procurando el bienestar de sus pacientes, la satisfacción de sus clientes, y la calidad de vida de sus empleados y asociados; y nuestra misión es reunir en una planta física adecuada, un equipo humano, proactivo y capacitarlo permanentemente, para atender de manera idónea las necesidades de salud, nutrición y bienestar de las mascotas de nuestros clientes, bajo el profesionalismo, la ética, la tecnología y el amor.")
-    )
+    var veterinarios: List<Veterinario> = emptyList()
+
+    fun loadVets(){
+        AppClient.vetapi.all().enqueue(this)
+    }
+
+    override fun onFailure(call: Call<List<Veterinario>>?, t: Throwable?) {
+
+    }
+
+    override fun onResponse(call: Call<List<Veterinario>>?, response: Response<List<Veterinario>>) {
+        if (response.isSuccessful){
+            veterinarios = response.body()!!
+        }
+    }
 
 }

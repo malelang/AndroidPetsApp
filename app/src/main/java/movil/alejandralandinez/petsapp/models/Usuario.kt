@@ -1,8 +1,6 @@
 package movil.alejandralandinez.petsapp.models
 
-/**
- * Created by alejandralandinez on 12/12/17.
- */
+
 class Usuario (
                var nombreusuario:String,
                var username:String,
