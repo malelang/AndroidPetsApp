@@ -50,16 +50,25 @@ class DetailActivity : AppCompatActivity(), Callback {
 
     }
 
-    override fun onSuccess() {
-        val drawable = img.drawable as BitmapDrawable
-        val palette = Palette.from(drawable.bitmap).generate()
-        val default = ContextCompat.getColor(this,R.color.colorPrimary)
-        val color = palette.getVibrantColor(default)
-        collapsing.setContentScrimColor(color)
-        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            window.statusBarColor = getStatusColor(color)
+    fun saveVet(){
+        val vet = veterinario
+        thread{
+            dao.insert(vet)
+            runOnUiThread {
+                //toast("Veterinario agregado a favoritos!")
+                Toast.makeText(this, "Agregado a favoritos.", Toast.LENGTH_SHORT).show()
+            }
         }
+
+        //   btnFav.setOnClickListener {
+        //     Toast.makeText(this@DetailActivity, "Eureka", Toast.LENGTH_SHORT).show()
+        //}
+
+        Toast.makeText(this, "Default toast.", Toast.LENGTH_SHORT).show()
+
     }
+
+
 
     fun getStatusColor(color:Int):Int{
         var red = Color.red(color) - 40
@@ -74,23 +83,17 @@ class DetailActivity : AppCompatActivity(), Callback {
 
     override fun onError() {}
 
-
-    fun saveVet(){
-        val vet = veterinario
-        thread{
-            dao.insert(vet)
-            runOnUiThread {
-                //toast("Veterinario agregado a favoritos!")
-                Toast.makeText(this, "Agregado a favoritos.", Toast.LENGTH_SHORT).show()
-            }
+    override fun onSuccess() {
+        val drawable = img.drawable as BitmapDrawable
+        val palette = Palette.from(drawable.bitmap).generate()
+        val default = ContextCompat.getColor(this,R.color.colorPrimary)
+        val color = palette.getVibrantColor(default)
+        collapsing.setContentScrimColor(color)
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            window.statusBarColor = getStatusColor(color)
         }
-
-     //   btnFav.setOnClickListener {
-       //     Toast.makeText(this@DetailActivity, "Eureka", Toast.LENGTH_SHORT).show()
-        //}
-
-        Toast.makeText(this, "Default toast.", Toast.LENGTH_SHORT).show()
-
-
     }
+
+
+
 }

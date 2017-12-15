@@ -54,7 +54,7 @@
             </android.support.design.widget.CollapsingToolbarLayout>
         </android.support.design.widget.AppBarLayout>
 
-        <android.support.design.widget.FloatingActionButton
+        <Button
             android:id="@+id/btnFav"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -62,9 +62,11 @@
             app:layout_anchor="@id/appbar"
             app:layout_anchorGravity="bottom|right"
             android:layout_margin="30dp"
-            app:srcCompat="@drawable/ic_star"
-            android:clickable="true"
-            android:onClick="@{() -> manejavet.saveVet()}"
+            android:background="#00600F"
+            android:text="Agregar"
+
+
+
             />
 
     </android.support.design.widget.CoordinatorLayout>
