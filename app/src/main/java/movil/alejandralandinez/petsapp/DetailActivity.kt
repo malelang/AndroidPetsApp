@@ -10,20 +10,29 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v4.content.ContextCompat
 import android.support.v7.graphics.Palette
+import android.widget.Button
+import android.widget.Toast
 import com.squareup.picasso.Callback
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_detail.*
 import kotlinx.android.synthetic.main.content_detail.*
 import movil.alejandralandinez.petsapp.databinding.ActivityDetailBinding
+import movil.alejandralandinez.petsapp.db.AppDb
+import movil.alejandralandinez.petsapp.db.VetsDao
 import movil.alejandralandinez.petsapp.models.Veterinario
 import movil.alejandralandinez.petsapp.util.Data
 import movil.alejandralandinez.petsapp.util.text
+import org.jetbrains.anko.toast
+import kotlin.concurrent.thread
 
 class DetailActivity : AppCompatActivity(), Callback {
 
 
     lateinit var binding:ActivityDetailBinding
     lateinit var veterinario:Veterinario
+    val dao:VetsDao = AppDb.db.vetDao()
+    // get reference to button
+    //val btnFav = findViewById<Button>(R.id.btnFav);
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,7 +45,11 @@ class DetailActivity : AppCompatActivity(), Callback {
 
         collapsing.title = veterinario.nombre
         Picasso.with(this).load(Uri.parse(veterinario.imagen)).into(img,this)
+
+
+
     }
+
     override fun onSuccess() {
         val drawable = img.drawable as BitmapDrawable
         val palette = Palette.from(drawable.bitmap).generate()
@@ -59,12 +72,25 @@ class DetailActivity : AppCompatActivity(), Callback {
         return Color.rgb(red,green,blue)
     }
 
-    override fun onError() {
+    override fun onError() {}
 
-    }
 
     fun saveVet(){
         val vet = veterinario
+        thread{
+            dao.insert(vet)
+            runOnUiThread {
+                //toast("Veterinario agregado a favoritos!")
+                Toast.makeText(this, "Agregado a favoritos.", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+     //   btnFav.setOnClickListener {
+       //     Toast.makeText(this@DetailActivity, "Eureka", Toast.LENGTH_SHORT).show()
+        //}
+
+        Toast.makeText(this, "Default toast.", Toast.LENGTH_SHORT).show()
+
 
     }
 }

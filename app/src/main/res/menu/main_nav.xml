@@ -2,23 +2,26 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item android:id="@+id/nav_home"
-        android:title="Tu perfil"
+        android:title="@string/yourProfile"
         android:icon="@drawable/ic_person"
         />
     <item android:id="@+id/nav_bitacora"
-        android:title="Bitacora"
+        android:title="@string/yourBitacora"
         android:icon="@drawable/ic_library"/>
     <item android:id="@+id/nav_vets"
-        android:title="Veterinarios"
+        android:title="@string/yourVeterinarios"
         android:icon="@drawable/ic_pets"/>
 
-    <item android:title="Opciones">
+    <item android:title="@string/yourOptions">
         <menu>
             <item android:id="@+id/logout"
-                android:title="Logout"
+                android:title="@string/yourLogout"
                 />
             <item android:id="@+id/update"
-                android:title="Actualizar datos"/>
+                android:title="@string/yourUpdate"/>
+
+            <item android:id="@+id/favorites"
+                android:title="@string/yourFavorites"/>
         </menu>
     </item>
 

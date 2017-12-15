@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    
+    <data>
+        <variable
+            name="vetelista"
+            type="movil.alejandralandinez.petsapp.models.Veterinario"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Base.TextAppearance.AppCompat.Large"
+            tools:text="Nombre"
+            android:fontFamily="@font/behindgreeneyes"
+            android:textSize="30sp"
+            android:textColor="@color/orange"
+            android:text="@{vetelista.nombre}"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Base.TextAppearance.AppCompat.Body1"
+            tools:text="Dirección"
+            android:text="@{vetelista.direccion}" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Base.TextAppearance.AppCompat.Body1"
+            tools:text="Número de contacto"
+            android:text="@{vetelista.contacto}"/>
+
+    </LinearLayout>
+</layout>

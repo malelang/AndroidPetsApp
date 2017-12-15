@@ -59,6 +59,7 @@ class MainActivity : AppCompatActivity(), DrawerLayout.DrawerListener  {
             R.id.nav_home -> putFragment(R.id.container, MainFragment.instance())
             R.id.nav_bitacora -> startActivity<BitacoraActivity>()
             R.id.nav_vets -> startActivity<VetsActivity>()
+            R.id.favorites -> startActivity<FavoritesActivity>()
             R.id.logout -> {
                 getSharedPreferences("preferencias", Context.MODE_PRIVATE).edit().putBoolean("logged",false).apply()
                 startActivity<LoginActivity>()

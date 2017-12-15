@@ -70,4 +70,11 @@
     <string name="radio_woman">Mujer</string>
     <string name="radio_man">Hombre</string>
     <string name="edad_en_meses">Edad(en meses)</string>
+    <string name="yourProfile">Tu perfil</string>
+    <string name="yourBitacora">Bitacora</string>
+    <string name="yourVeterinarios">Veterinarios</string>
+    <string name="yourOptions">Opciones</string>
+    <string name="yourLogout">Logout</string>
+    <string name="yourUpdate">Actualizar datos</string>
+    <string name="yourFavorites">Favoritos</string>
 </resources>
