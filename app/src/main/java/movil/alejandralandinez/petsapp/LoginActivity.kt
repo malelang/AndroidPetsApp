@@ -47,7 +47,7 @@ class LoginActivity : AppCompatActivity(), Callback<SimpleResponse> {
     fun login(){
         username=user.text()
         password=pass.text()
-        AppClient.userapi.loguser(username,password).enqueue(this)
+        AppClient.userapi.loguser(username).enqueue(this)
 
     }
 
@@ -57,10 +57,12 @@ class LoginActivity : AppCompatActivity(), Callback<SimpleResponse> {
     }
 
     override fun onResponse(call: Call<SimpleResponse>?, response: Response<SimpleResponse>?) {
-        toast("Usuario encontrado. Iniciando sesión...")
+
         preferences.edit().putBoolean("logged",true).apply()
         preferences.edit().putString("nuevousuario",username).apply()
+        preferences.edit().putString("nuevapassword",password).apply()
         startActivity<MainActivity>()
+        finish()
     }
 
     override fun onFailure(call: Call<SimpleResponse>?, t: Throwable?) {

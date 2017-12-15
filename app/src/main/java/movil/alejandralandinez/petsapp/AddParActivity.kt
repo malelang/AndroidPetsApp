@@ -6,6 +6,8 @@ import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_add_par.*
 import movil.alejandralandinez.petsapp.databinding.ActivityAddParBinding
 import movil.alejandralandinez.petsapp.models.Parasito
+import movil.alejandralandinez.petsapp.util.Data
+import movil.alejandralandinez.petsapp.util.text
 
 class AddParActivity : AppCompatActivity() {
 
@@ -16,10 +18,12 @@ class AddParActivity : AppCompatActivity() {
     }
 
     fun addparasito(){
-        val fecha = fechaaddpar.toString()
-        val peso = peso.toString()
-        val producto = productoaddpar.toString()
-        val proxima = proximaaddpar.toString()
+        val fecha = fechaaddpar.text().toString()
+        val peso = peso.text().toString()
+        val producto = productoaddpar.text().toString()
+        val proxima = proximaaddpar.text().toString()
         val par = Parasito(fecha, peso, producto,proxima)
+        Data.parasitos.add(par)
+        finish()
     }
 }

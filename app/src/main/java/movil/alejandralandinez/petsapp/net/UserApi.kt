@@ -11,15 +11,17 @@ interface UserApi{
     @GET("users")
     fun all():Call<List<Usuario>>
 
-    @GET("users/{id}")
-    fun getById(@Path("id") id:String):Call<Usuario>
+    @GET("users/{username}")
+    fun getByUsername(@Path("username") username:String):Call<Usuario>
+
+    @GET("users/{contrasena}")
+    fun getByPassword(@Path("contrasena") contrasena:String):Call<Usuario>
 
     @POST("users")
     fun insert(@Body user:Usuario):Call<SimpleResponse>
 
-    @Multipart
     @POST("users/login")
-    fun loguser(@Part("username") username:String, @Part("password") password:String):Call<SimpleResponse>
+    fun loguser(@Body username:String):Call<SimpleResponse>
 
 
 

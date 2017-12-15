@@ -1,87 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="movil.alejandralandinez.petsapp.MainActivity">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <android.support.v4.widget.DrawerLayout
-        android:id="@+id/drawer"
+    <data>
+        <variable
+            name="handlermain"
+            type="movil.alejandralandinez.petsapp.MainActivity"/>
+        <variable
+            name="datahandler"
+            type="movil.alejandralandinez.petsapp.models.Usuario"/>
+    </data>
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <LinearLayout
-            android:layout_height="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.v4.widget.DrawerLayout
+            android:id="@+id/drawer"
             android:layout_width="match_parent"
-            android:orientation="vertical">
-            <FrameLayout
-                android:id="@+id/usercontainer"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_height="match_parent"
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:background="#aed581">
-                <ImageView
-                    android:layout_width="150dp"
-                    android:layout_height="130dp"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginStart="30dp"
-                    />
-                <ImageView
-                    android:id="@+id/mask"
+                android:orientation="vertical">
+
+                <FrameLayout
+                    android:id="@+id/usercontainer"
                     android:layout_width="match_parent"
                     android:layout_height="150dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/mask"
-                    />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="30dp"
-                    android:layout_gravity="end"
-                    tools:text="Nombre"
-                    android:textStyle="bold"
-                    android:textColor="@color/cardview_dark_background"
-                    android:layout_marginEnd="30dp"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="65dp"
-                    android:layout_gravity="end"
-                    tools:text="Edad"
-                    android:textStyle="bold"
-                    android:textColor="@color/cardview_dark_background"
-                    android:layout_marginEnd="30dp"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="100dp"
-                    android:layout_gravity="end"
-                    tools:text="Número de contacto"
-                    android:textStyle="bold"
-                    android:textColor="@color/cardview_dark_background"
-                    android:layout_marginEnd="30dp"/>
-            </FrameLayout>
+                    android:background="#aed581">
 
-            <FrameLayout
-                android:id="@+id/container"
-                android:layout_width="match_parent"
-                android:layout_height="360dp"
-                />
-        </LinearLayout>
-        <android.support.design.widget.NavigationView
-            android:id="@+id/nav"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_gravity="start"
-            app:menu="@menu/main_nav"
-            app:headerLayout="@layout/nav_header"/>
+                    <ImageView
+                        android:layout_width="150dp"
+                        android:layout_height="130dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="30dp"
+                        app:imgUrl="@{datahandler.imagen}"/>
 
-    </android.support.v4.widget.DrawerLayout>
+                    <ImageView
+                        android:id="@+id/mask"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/mask" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:layout_gravity="end"
+                        tools:text="Nombre"
+                        android:textStyle="bold"
+                        android:textColor="@color/cardview_dark_background"
+                        android:layout_marginEnd="30dp"
+                        android:text="@{datahandler.nombreusuario}"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="65dp"
+                        android:layout_gravity="end"
+                        tools:text="Edad"
+                        android:textStyle="bold"
+                        android:textColor="@color/cardview_dark_background"
+                        android:layout_marginEnd="30dp"
+                        android:text="@{datahandler.edad}"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="100dp"
+                        android:layout_gravity="end"
+                        tools:text="Número de contacto"
+                        android:textStyle="bold"
+                        android:textColor="@color/cardview_dark_background"
+                        android:layout_marginEnd="30dp"
+                        android:text="@{datahandler.contacto}"/>
+                </FrameLayout>
+
+                <FrameLayout
+                    android:id="@+id/container"
+                    android:layout_width="match_parent"
+                    android:layout_height="360dp" />
+            </LinearLayout>
+
+            <android.support.design.widget.NavigationView
+                android:id="@+id/nav"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="start"
+                app:menu="@menu/main_nav"
+                app:headerLayout="@layout/nav_header" />
+
+        </android.support.v4.widget.DrawerLayout>
 
 
-
-
-
-</LinearLayout>
+    </LinearLayout>
+</layout>

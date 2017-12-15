@@ -13,7 +13,7 @@ import movil.alejandralandinez.petsapp.fragments.ParasitoFragment
 import org.jetbrains.anko.startActivity
 
 
-class BitacoraActivity : AppCompatActivity() {
+class   BitacoraActivity : AppCompatActivity() {
 
 
 

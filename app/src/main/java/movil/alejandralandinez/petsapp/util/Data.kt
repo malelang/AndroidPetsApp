@@ -1,9 +1,6 @@
 package movil.alejandralandinez.petsapp.util
 
-import movil.alejandralandinez.petsapp.models.Mascota
-import movil.alejandralandinez.petsapp.models.Parasito
-import movil.alejandralandinez.petsapp.models.Vacuna
-import movil.alejandralandinez.petsapp.models.Veterinario
+import movil.alejandralandinez.petsapp.models.*
 import movil.alejandralandinez.petsapp.net.AppClient
 import retrofit2.Call
 import retrofit2.Callback
@@ -50,6 +47,8 @@ object Data : Callback<List<Veterinario>> {
     )
 
     var veterinarios: List<Veterinario> = emptyList()
+
+    var usuariologged:Usuario = Usuario()
 
     fun loadVets(){
         AppClient.vetapi.all().enqueue(this)

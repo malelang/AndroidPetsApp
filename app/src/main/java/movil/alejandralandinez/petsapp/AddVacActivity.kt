@@ -6,6 +6,7 @@ import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_add_vac.*
 import movil.alejandralandinez.petsapp.databinding.ActivityAddVacBinding
 import movil.alejandralandinez.petsapp.models.Vacuna
+import movil.alejandralandinez.petsapp.util.Data
 
 class AddVacActivity : AppCompatActivity() {
 
@@ -20,5 +21,7 @@ class AddVacActivity : AppCompatActivity() {
         val enfermedad = sickaddvac.toString()
         val doctor = doctoraddvac.toString()
         val vac = Vacuna(fecha,enfermedad,doctor)
+        Data.vacunas.add(vac)
+        finish()
     }
 }

@@ -18,6 +18,7 @@ import movil.alejandralandinez.petsapp.databinding.ActivityDetailBinding
 import movil.alejandralandinez.petsapp.models.Veterinario
 import movil.alejandralandinez.petsapp.util.Data
 import movil.alejandralandinez.petsapp.util.text
+import org.jetbrains.anko.startActivity
 
 class DetailActivity : AppCompatActivity(), Callback {
 
@@ -64,7 +65,7 @@ class DetailActivity : AppCompatActivity(), Callback {
     }
 
     fun saveVet(){
-        val vet = veterinario
+        startActivity<BitacoraActivity>()
 
     }
 }

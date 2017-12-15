@@ -43,6 +43,7 @@ class RegMascotaActivity : AppCompatActivity(), Callback<SimpleResponse> {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        val binding: ActivityRegMascotaBinding = DataBindingUtil.setContentView(this, R.layout.activity_reg_mascota)
         nombre=preferences.getString("name","").toString()
         username=preferences.getString("username","").toString()
         contrasena=preferences.getString("contrasena","").toString()
@@ -51,7 +52,7 @@ class RegMascotaActivity : AppCompatActivity(), Callback<SimpleResponse> {
         sexo=preferences.getString("sexo","").toString()
         imagen=preferences.getString("imagen","").toString()
 
-        val binding: ActivityRegMascotaBinding = DataBindingUtil.setContentView(this, R.layout.activity_reg_mascota)
+
         binding.handregmasc = this
 
         //region RadiobuttonType
@@ -98,7 +99,7 @@ class RegMascotaActivity : AppCompatActivity(), Callback<SimpleResponse> {
 
     override fun onResponse(call: Call<SimpleResponse>?, response: Response<SimpleResponse>?) {
         toast("Usuario agregado!")
-        startActivity<MainActivity>()
+        startActivity<LoginActivity>()
     }
 
 

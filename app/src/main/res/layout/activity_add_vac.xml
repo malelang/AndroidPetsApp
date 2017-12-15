@@ -39,16 +39,17 @@
 
         <EditText
             android:id="@+id/fechaaddvac"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="@string/dateaddvac"
             android:inputType="date"
             android:textColorHint="@color/colorPrimaryDark"
             app:layout_constraintBottom_toTopOf="@+id/sickaddvac"
+            app:layout_constraintEnd_toEndOf="@+id/sickaddvac"
+            app:layout_constraintStart_toStartOf="@+id/sickaddvac"
             app:layout_constraintTop_toBottomOf="@+id/textView12"
-            app:layout_constraintVertical_chainStyle="spread"
-            tools:layout_editor_absoluteX="84dp" />
+            app:layout_constraintVertical_chainStyle="spread" />
 
         <EditText
             android:id="@+id/sickaddvac"
@@ -59,21 +60,25 @@
             android:inputType="textPersonName"
             android:textColorHint="@color/colorPrimaryDark"
             app:layout_constraintBottom_toTopOf="@+id/doctoraddvac"
-            app:layout_constraintTop_toBottomOf="@+id/fechaaddvac"
-            tools:layout_editor_absoluteX="84dp" />
+            app:layout_constraintEnd_toEndOf="@+id/doctoraddvac"
+            app:layout_constraintStart_toStartOf="@+id/doctoraddvac"
+            app:layout_constraintTop_toBottomOf="@+id/fechaaddvac" />
 
         <EditText
             android:id="@+id/doctoraddvac"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="128dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
             android:ems="10"
             android:hint="@string/vetaddvac"
             android:inputType="textPersonName"
             android:textColorHint="@color/colorPrimaryDark"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/sickaddvac"
-            tools:layout_editor_absoluteX="84dp" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sickaddvac" />
 
         <Button
             android:id="@+id/btnaddvac"
@@ -83,11 +88,11 @@
             android:layout_marginBottom="32dp"
             android:layout_marginEnd="32dp"
             android:background="@color/colorPrimary"
+            android:onClick="@{()->handleraddvac.addvacuna()}"
             android:text="@string/addvacuna"
             android:textColor="#FFFFFF"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:onClick="@{()->handleraddvac.addvacuna()}"/>
+            app:layout_constraintEnd_toEndOf="parent" />
 
     </android.support.constraint.ConstraintLayout>
 </layout>
